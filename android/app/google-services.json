@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "570288592925",
+    "project_id": "where2play-c4afb",
+    "storage_bucket": "where2play-c4afb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570288592925:android:eaa9a3b0d3c1943ff68ef4",
+        "android_client_info": {
+          "package_name": "com.example.where2play"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570288592925-unj1qpiq4carve1r6ljtbfc6rp5dvn80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDykXsxbOPrWflcgHhHcSM0iTQOHBsGoGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570288592925-unj1qpiq4carve1r6ljtbfc6rp5dvn80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
