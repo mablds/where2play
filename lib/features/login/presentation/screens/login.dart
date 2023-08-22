@@ -25,6 +25,23 @@ class LoginPage extends StatelessWidget {
             }
           },
           builder: (context, state) {
+            if (state.status == LoginStatus.error) {
+              return AlertDialog.adaptive(
+                title: const Text('Falha ao autenticar'),
+                content: Text(state.errorMessage ?? ''),
+                actions: [
+                  GestureDetector(
+                    child: const Center(
+                      child: Text(
+                        'Tentar novamente',
+                        style: TextStyle(height: 4),
+                      ),
+                    ),
+                    onTap: () => cubit.resetLoginPageStatus(),
+                  )
+                ],
+              );
+            }
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,7 +69,7 @@ class LoginPage extends StatelessWidget {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 40),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.greenAccent,
