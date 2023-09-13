@@ -32,22 +32,28 @@ class LoginCubit extends Cubit<LoginState> {
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case 'user-not-found':
-          emit(state.copyWith(
-            status: LoginStatus.error,
-            errorMessage: _emailNotFound,
-          ));
+          emit(
+            state.copyWith(
+              status: LoginStatus.error,
+              errorMessage: _emailNotFound,
+            ),
+          );
           break;
         case 'wrong-password':
-          emit(state.copyWith(
-            status: LoginStatus.error,
-            errorMessage: _passwordIncorrect,
-          ));
+          emit(
+            state.copyWith(
+              status: LoginStatus.error,
+              errorMessage: _passwordIncorrect,
+            ),
+          );
           break;
         default:
-          emit(state.copyWith(
-            status: LoginStatus.error,
-            errorMessage: _generalError,
-          ));
+          emit(
+            state.copyWith(
+              status: LoginStatus.error,
+              errorMessage: _generalError,
+            ),
+          );
           break;
       }
     }
