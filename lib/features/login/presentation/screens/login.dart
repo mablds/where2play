@@ -75,14 +75,27 @@ class LoginPage extends StatelessWidget {
                     backgroundColor: Colors.greenAccent,
                     padding: const EdgeInsets.symmetric(vertical: 15),
                   ),
-                  child: const Text(
-                    'Login',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      decoration: TextDecoration.none,
-                      fontStyle: FontStyle.normal,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          decoration: TextDecoration.none,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Visibility(
+                        visible: state.status == LoginStatus.loading,
+                        child: const CircularProgressIndicator(
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
+                      )
+                    ],
                   ),
                   onPressed: () async {
                     await cubit.login(

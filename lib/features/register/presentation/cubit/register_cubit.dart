@@ -17,7 +17,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final RegisterRepository registerRepository;
 
-  Future<void> login({
+  Future<void> register({
     required String email,
     required String password,
   }) async {
@@ -37,7 +37,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     }
   }
 
-  void resetLoginPageStatus() {
+  void resetRegisterPageStatus() {
     return emit(state.copyWith(status: RegisterStatus.initial));
   }
 }
