@@ -25,7 +25,7 @@ class AppRoutes {
           builder: (context) => BlocProvider(
             create: (_) => LoginCubit(
               loginRepository: LoginRepositoryImpl(
-                loginDataSourceRemote: LoginDataSourceRemoteImpl(),
+                loginDataSource: LoginDataSourceImpl(),
               ),
             ),
             child: const LoginPage(),
@@ -44,7 +44,14 @@ class AppRoutes {
         );
       case home:
         return MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => BlocProvider(
+            create: (_) => LoginCubit(
+              loginRepository: LoginRepositoryImpl(
+                loginDataSource: LoginDataSourceImpl(),
+              ),
+            ),
+            child: const HomePage(),
+          ),
         );
       default:
         return MaterialPageRoute(

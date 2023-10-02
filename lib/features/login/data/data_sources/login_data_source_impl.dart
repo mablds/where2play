@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:where2play/features/login/data/data_sources/login_data_source.dart';
 
-class LoginDataSourceRemoteImpl implements LoginDataSourceRemote {
+class LoginDataSourceImpl implements LoginDataSource {
   @override
   Future<void> login({
     required String email,
@@ -18,4 +18,7 @@ class LoginDataSourceRemoteImpl implements LoginDataSourceRemote {
       throw Exception(e);
     }
   }
+
+  @override
+  User? getUserData() => FirebaseAuth.instance.currentUser;
 }

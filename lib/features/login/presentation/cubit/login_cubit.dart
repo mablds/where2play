@@ -62,4 +62,9 @@ class LoginCubit extends Cubit<LoginState> {
   void resetLoginPageStatus() {
     return emit(state.copyWith(status: LoginStatus.initial));
   }
+
+  String? getUserName() {
+    final userData = loginRepository.getUserData();
+    return userData?.displayName;
+  }
 }
